@@ -17,7 +17,7 @@ export default function App() {
   return (
     <Router>
   <AppNavbar />
-  <MusicPlayer />
+  <MusicPlayer />  
 
   <div className="page-wrapper">
     
