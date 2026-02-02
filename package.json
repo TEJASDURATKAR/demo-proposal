@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.8",
-    "react": "^19.2.3",
-    "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^7.12.0",
+    "react-bootstrap": "^2.10.10",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +26,12 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.20.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3"
   },
   "browserslist": {
     "production": [
