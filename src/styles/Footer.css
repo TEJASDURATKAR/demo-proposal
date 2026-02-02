@@ -1,0 +1,114 @@
+/* ================= FOOTER (DARK ROMANTIC) ================= */
+.footer {
+  background: linear-gradient(
+    135deg,
+    #1a1026,   /* deep plum */
+    #0f0f1a    /* near-black */
+  );
+  padding: 60px 20px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -6px 18px rgba(255, 79, 154, 0.22);
+}
+
+/* Floating romantic glow */
+.footer::before {
+  content: "💖 💍 💕";
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  font-size: 6rem;
+  opacity: 0.05;
+  animation: footerFloat 22s linear infinite;
+  pointer-events: none;
+}
+
+.footer::after {
+  content: "✨";
+  position: absolute;
+  bottom: 18%;
+  right: 10%;
+  font-size: 5rem;
+  opacity: 0.08;
+  animation: footerSparkle 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Content wrapper */
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+
+.footer-logo span {
+  color: #ff4f9a;
+}
+
+/* Tagline */
+.footer-tagline {
+  font-size: 1.05rem;
+  color: #e6e6e6;
+  max-width: 520px;
+  margin: 0 auto 25px;
+  line-height: 1.7;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 0.95rem;
+  color: #bfbfbf;
+  margin-top: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes footerFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-60px) translateX(40px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes footerSparkle {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 15px 35px;
+  }
+
+  .footer-logo {
+    font-size: 1.55rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.98rem;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+  }
+}

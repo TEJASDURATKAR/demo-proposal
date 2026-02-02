@@ -1,0 +1,73 @@
+/* ================= NAVBAR (DARK ROMANTIC) ================= */
+.navbar-main {
+  height: 72px;
+  background: linear-gradient(
+    135deg,
+    #1a1026,   /* deep plum */
+    #0f0f1a    /* near-black */
+  );
+  box-shadow: 0 6px 18px rgba(255, 79, 154, 0.25);
+  z-index: 1050;
+}
+
+/* Brand */
+.brand-logo {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #ffffff !important;
+  letter-spacing: 0.6px;
+}
+
+.brand-logo span {
+  color: #ff4f9a; /* romantic accent */
+}
+
+/* Nav links */
+.nav-links .nav-item {
+  margin: 0 14px;
+  font-weight: 600;
+  color: #e8e8e8;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline */
+.nav-links .nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff4f9a, #c77dff);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-links .nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-links .nav-item:hover {
+  color: #ff4f9a;
+}
+
+/* Active link */
+.nav-links .nav-item.active {
+  color: #ff4f9a;
+  font-weight: 700;
+}
+
+/* Mobile toggle */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}

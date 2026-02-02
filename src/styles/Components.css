@@ -1,0 +1,19 @@
+.hero-block {
+  padding: 140px 0 80px; /* extra top space */
+  background: linear-gradient(135deg, #dc3545, #ff6f91);
+  color: white;
+}
+
+
+
+.proposal-cta {
+padding: 80px 0;
+}
+
+
+.music-btn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+border-radius: 30px;
+}

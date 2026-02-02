@@ -1,0 +1,72 @@
+/* ================= PRICING SECTION ================= */
+.pricing-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+/* Title */
+.pricing-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+/* ================= PRICING CARD ================= */
+.pricing-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Card content */
+.pricing-card .card-body {
+  padding: 35px 25px;
+}
+
+.pricing-card .card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Price */
+.pricing-card h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000;
+  margin: 20px 0 25px;
+}
+
+/* ================= BUTTON ================= */
+.pricing-card .btn {
+  border-radius: 6px;
+  padding: 10px 26px;
+  font-weight: 600;
+  background-color: #dc3545; /* bootstrap danger */
+  border: none;
+}
+
+.pricing-card .btn:hover {
+  background-color: #bb2d3b;
+}
+
+/* ================= FEATURED PLAN ================= */
+.pricing-card.featured {
+  border: 2px solid #dc3545;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .pricing-section h2 {
+    font-size: 2.1rem;
+  }
+}
