@@ -1,13 +1,112 @@
-body {
+/* ============================
+   GLOBAL MOBILE RESPONSIVE CSS
+============================ */
+
+/* Make all elements responsive */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body responsive padding + font scaling */
+body {
+  width: 100%;
+ 
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons responsive */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Input fields responsive */
+input,
+textarea,
+select {
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+}
+
+/* Links clean */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container fix for mobile */
+.container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+/* ============================
+   MOBILE MEDIA QUERY
+============================ */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 26px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 22px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  p {
+    font-size: 13px !important;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
 }

@@ -1,13 +1,10 @@
 /* ================= NAVBAR (DARK ROMANTIC) ================= */
 .navbar-main {
   height: 72px;
-  background: linear-gradient(
-    135deg,
-    #1a1026,   /* deep plum */
-    #0f0f1a    /* near-black */
-  );
+  background: linear-gradient(135deg, #1a1026, #0f0f1a);
   box-shadow: 0 6px 18px rgba(255, 79, 154, 0.25);
   z-index: 1050;
+  padding: 0 18px;
 }
 
 /* Brand */
@@ -19,10 +16,15 @@
 }
 
 .brand-logo span {
-  color: #ff4f9a; /* romantic accent */
+  color: #ff4f9a;
 }
 
 /* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links .nav-item {
   margin: 0 14px;
   font-weight: 600;
@@ -62,6 +64,7 @@
 /* Mobile toggle */
 .navbar-toggler {
   border: none;
+  outline: none;
 }
 
 .navbar-toggler-icon {
@@ -70,4 +73,72 @@
 
 .navbar-toggler:focus {
   box-shadow: none;
+}
+
+/* ================= MOBILE RESPONSIVE FIX ================= */
+@media (max-width: 991px) {
+
+  /* Navbar height auto for dropdown */
+  .navbar-main {
+    height: auto;
+    padding: 12px 15px;
+  }
+
+  /* Dropdown menu background */
+  .navbar-collapse {
+    background: linear-gradient(135deg, #1a1026, #0f0f1a);
+    border-radius: 16px;
+    padding: 18px 12px;
+    margin-top: 12px;
+    box-shadow: 0 10px 25px rgba(255, 79, 154, 0.25);
+    animation: fadeDown 0.35s ease-in-out;
+  }
+
+  /* Menu items center */
+  .nav-links {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Link styling for mobile */
+  .nav-links .nav-item {
+    width: 100%;
+    padding: 12px 0;
+    margin: 0;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effect for mobile */
+  .nav-links .nav-item:hover {
+    background: rgba(255, 79, 154, 0.12);
+    color: #ff4f9a;
+    transform: scale(1.03);
+  }
+
+  /* Remove underline in mobile */
+  .nav-links .nav-item::after {
+    display: none;
+  }
+
+  /* Active item in mobile */
+  .nav-links .nav-item.active {
+    background: rgba(255, 79, 154, 0.15);
+    color: #ff4f9a;
+  }
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

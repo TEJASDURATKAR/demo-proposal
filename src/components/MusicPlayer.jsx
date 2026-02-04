@@ -4,47 +4,81 @@ import "../styles/Music.css";
 
 export default function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Try autoplay muted (may work in some browsers)
+    audio.volume = 0.7;
     audio.muted = true;
-    audio.play().catch(() => {
-      // autoplay blocked, show play button
-      setPlaying(false);
-    });
+
+    const playAudio = async () => {
+      try {
+        await audio.play();
+        setPlaying(true);
+
+        // Auto started muted, now wait for user interaction to unmute
+        setShowButton(true);
+      } catch (err) {
+        // autoplay blocked
+        setShowButton(true);
+      }
+    };
+
+    playAudio();
+
+    // When user clicks anywhere -> unmute + play
+    const enableSound = async () => {
+      try {
+        audio.muted = false;
+        await audio.play();
+        setPlaying(true);
+        setShowButton(false);
+      } catch (err) {}
+
+      document.removeEventListener("click", enableSound);
+      document.removeEventListener("touchstart", enableSound);
+    };
+
+    document.addEventListener("click", enableSound);
+    document.addEventListener("touchstart", enableSound);
+
+    return () => {
+      document.removeEventListener("click", enableSound);
+      document.removeEventListener("touchstart", enableSound);
+    };
   }, []);
 
   const toggleMusic = () => {
-    if (!audioRef.current) return;
+    const audio = audioRef.current;
+    if (!audio) return;
 
-    if (!playing) {
-      audioRef.current.muted = false; // unmute
-      audioRef.current.play().catch(() => {});
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
     } else {
-      audioRef.current.pause();
+      audio.muted = false;
+      audio.play();
+      setPlaying(true);
     }
-
-    setPlaying(!playing);
   };
 
   return (
-    <div
-      className="music-player"
-      style={{
-        position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        zIndex: 2000,
-      }}
-    >
+    <div className="music-player">
       <audio ref={audioRef} src="/music.mp3" loop />
+
       <Button size="sm" variant="danger" onClick={toggleMusic}>
         {playing ? "Pause 🎵" : "Play Music 🎵"}
       </Button>
+
+      {/* Optional: show small hint button if autoplay blocked */}
+      {showButton && (
+        <p style={{ color: "white", fontSize: "12px", marginTop: "5px" }}>
+          Tap anywhere to enable sound 🔊
+        </p>
+      )}
     </div>
   );
 }

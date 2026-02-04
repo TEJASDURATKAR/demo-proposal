@@ -17,3 +17,11 @@
     opacity: 0;
   }
 }
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .floating-heart {
+    font-size: 26px;
+    animation-duration: 3s;
+  }
+}
